@@ -20,7 +20,7 @@ import { ProductService } from './product.service';
     HttpClientModule,
    
   ],
-  providers: [ ProductService,],
+  providers: [ ProductService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
