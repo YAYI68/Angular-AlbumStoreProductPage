@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, map, tap } from 'rxjs';
+import {Http, Response } from '@angular/http';
+import 'rxjs/add/operator/map';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +13,7 @@ export class ProductService {
   constructor(private _http: HttpClient) { }
   getAlbum(id:number){
     return this._http.get(this._albumUrl).pipe(
-      map(album =>album)
+      map(response =>response.json())
     )
   }
  
