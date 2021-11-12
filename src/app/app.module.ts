@@ -7,6 +7,13 @@ import { ProductPageComponent } from './product-page/product-page.component';
 import { ProductDescriptionComponent } from './product-description/product-description.component';
 import { ProductService } from './product.service';
 import { ProductTracklistingComponent } from './product-tracklisting/product-tracklisting.component';
+import { RouterModule, Routes } from '@angular/router';
+
+const appRoutes:Routes = [
+  { path: "product/:id", component: ProductPageComponent},
+  { path: " ", redirectTo: "product", pathMatch:"full"},
+]
+
 
 @NgModule({
   declarations: [
@@ -20,6 +27,7 @@ import { ProductTracklistingComponent } from './product-tracklisting/product-tra
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    RouterModule.forRoot(appRoutes)
    
   ],
   providers: [ ProductService ],
